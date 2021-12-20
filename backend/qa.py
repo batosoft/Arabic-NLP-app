@@ -31,7 +31,7 @@ def write():
         "Max. number of answers", min_value=1, max_value=10, value=2, step=1
     )
 
-    question = st.text_input("", value="من هو جو بايدن؟")
+    question = st.text_input("", value="كيفية اصدار رخصة قيادة؟")
     if "؟" not in question:
         question += "؟"
 

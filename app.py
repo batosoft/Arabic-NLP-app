@@ -4,24 +4,15 @@ import streamlit as st
 from backend.utils import get_current_ram_usage, ga
 
 import backend.aragpt
-import backend.home
-import backend.processor
-import backend.sa
 import backend.qa
-import backend.sarcasm
 
 st.set_page_config(
-    page_title="TEST", page_icon="📖", initial_sidebar_state="expanded", layout="wide"
+    page_title="RTA Services Search", page_icon="📖", initial_sidebar_state="expanded", layout="wide"
 )
 
 ga(st.__file__)
 
 PAGES = {
-    "Home": backend.home,
-    "Arabic Text Preprocessor": backend.processor,
-    "Arabic Language Generation": backend.aragpt,
-    "Arabic Sentiment Analysis": backend.sa,
-    "Arabic Sarcasm Detection": backend.sarcasm,
     "Arabic Question Answering": backend.qa,
 }
 
@@ -34,7 +25,7 @@ page = PAGES[selection]
 ast.shared.components.write_page(page)
 
 st.sidebar.header("Info")
-st.sidebar.write("Made by [Wissam Antoun](https://twitter.com/wissam_antoun)")
+st.sidebar.write("Made by [Ali Alhashimi](https://twitter.com/alilibx)")
 st.sidebar.write(
     "Pre-trained models are available on [HF Hub](https://huggingface.co/aubmindlab)"
 )
@@ -42,7 +33,7 @@ st.sidebar.write(
     "Models source code available on [GitHub](https://github.com/aub-mind/arabert)"
 )
 st.sidebar.write(
-    "App source code available on [GitHub](https://github.com/WissamAntoun/Arabic-NLP-app)"
+    "App source code available on [GitHub](https://github.com/alilibx/Arabic-NLP-app)"
 )
 if st.sidebar.checkbox("Show RAM usage"):
     ram = get_current_ram_usage()
